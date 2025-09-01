@@ -5,30 +5,21 @@ let oneEuroIs = {
 }
 
 const fromEuroToDollar = function (valueInEuro) {
-
-    let valueInDollar = valueInEuro * 1.07;
-
+    let valueInDollar = valueInEuro * oneEuroIs["USD"];
     return valueInDollar;
-
 }
 
 const fromDollarToYen = function (valueInDollar) {
-
-    let valueInYen = valueInDollar * 146.26;
-
+    let valueInEuro = valueInDollar / oneEuroIs["USD"];
+    let valueInYen = valueInEuro * oneEuroIs["JPY"];
     return valueInYen;
-
 }
-
 
 const fromYenToPound = function (valueInYen) {
-
-    let valueInPound = valueInYen * 0.0055;
-
+    let valueInEuro = valueInYen / oneEuroIs["JPY"];
+    let valueInPound = valueInEuro * oneEuroIs["GBP"];
     return valueInPound;
-
 }
-
 
 module.exports = { fromEuroToDollar, fromDollarToYen, fromYenToPound };
 

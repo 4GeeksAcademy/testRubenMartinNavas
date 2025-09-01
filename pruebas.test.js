@@ -9,16 +9,12 @@ test("One euro should be 1.07 dollars", function () {
 });
 
 
-test("One Dollar should be 146.26 Yen", function () {
-    const Yen = fromDollarToYen(3.5);
-    const expected = 3.5 * 146.2;
-    expect(fromDollarToYen(3.5)).toBeCloseTo(511.9099);
+test("3.5 Dollar should be 511.91 Yen", function () {
+    expect(fromDollarToYen(3.5)).toBeCloseTo(511.9158);
 });
 
 
-test("One Yen should be 0.0055 Pound", function () {
-    const Pound = fromYenToPound(3.5);
-    const expected = 3.5 * 0.0055;
-    expect(fromYenToPound(3.5)).toBe(0.01925);
+test("3.5 Yen should be  Pound 0.01945", function () {
+    expect(fromYenToPound(3.5)).toBeCloseTo(0.01945);
 });
 
